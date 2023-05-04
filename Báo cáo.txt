@@ -1,0 +1,18 @@
+-Một contract upgrade proxy là một mẫu thiết kế hợp đồng thông minh 
+cho phép nâng cấp một hợp đồng đã triển khai lên một phiên bản mới mà
+không làm gián đoạn chức năng của hợp đồng ban đầu.Mẫu này đặc biệt hữu ích
+cho các hợp đồng dự định tồn tại trong thời gian dài, vì nó cho phép cải
+tiến được thực hiện theo thời gian mà không yêu cầu người dùng tương tác
+với một hợp đồng mới.
+-Cách thức hoạt động:
+Ý tưởng cơ bản là có một hợp đồng riêng biệt làm trung gian giữa người dùng
+và hợp đồng đã triển khai. Hợp đồng proxy chuyển tiếp yêu cầu từ người dùng
+đến hợp đồng đã triển khai và trả lại phản hồi. 
+Khi một phiên bản mới của hợp đồng được triển khai, proxy có thể được cập
+nhật để trỏ đến địa chỉ hợp đồng mới, cho phép người dùng tiếp tục sử dụng
+hợp đồng mà không cần cập nhật code hoặc di chuyển dữ liệu của họ.
+-Upgrade rule:
++ Bất kì upgrade nào cần test kĩ lưỡng, đảm bảo không có lỗ hổng.
++ Upgrade cần minh bạch, dễ tiếp cận với người dùng.
++ Upgrade không được dẫn đến việc mất dữ liệu, tài sản của người dùng.
++ Upgrade không được làm gián đoạn các chức năng của hợp đồng.
