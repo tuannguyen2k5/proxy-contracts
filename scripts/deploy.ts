@@ -1,9 +1,8 @@
-
-const hre = require("hardhat");
+import { ethers,upgrades } from "hardhat";
 
 async function main() {
-  const UpgradeableERC20 = await hre.ethers.getContractFactory('UpgradeableERC20');
-  const deployedContract = await hre.upgrades.deployProxy(UpgradeableERC20, ['MyToken', 'MTC', '2', '1000000']);
+  const UpgradeableERC20 = await ethers.getContractFactory('UpgradeableERC20');
+  const deployedContract = await upgrades.deployProxy(UpgradeableERC20, ['MyToken', 'MTC', '2', '1000000']);
   console.log(`Contract deployed to address: ${deployedContract.address}`);
 }
 
@@ -13,5 +12,3 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-
-

@@ -1,4 +1,5 @@
-const { expect } = require("chai");
+import { expect } from "chai";
+import { ethers, upgrades } from "hardhat";
 
 describe("upgrade", function () {
     it('it should upgrade balance,name,symbol in the NewERC20 the same in UpgradeableERC20', async () => {
