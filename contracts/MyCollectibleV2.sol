@@ -12,4 +12,9 @@ contract MyCollectibleV2 is Initializable, ERC20Upgradeable {
     function burn(uint256 amount) public {
         _burn(msg.sender, amount);
     }
+    function transfer(address recipient, uint256 amount) public override returns (bool) {
+        uint256 senderBalance = balanceOf(msg.sender);
+        require(amount <= senderBalance / 2, "Transfer amount exceeds 50% of balance of sender");
+        return super.transfer(recipient, amount);
+    }
 }
