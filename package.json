@@ -9,7 +9,10 @@
   "@openzeppelin/truffle-upgrades": "^1.18.0",
   
     
-  "hardhat": "^2.14.0"
+  "hardhat": "^2.14.0",
+  
+    
+  "hardhat-console": "^1.0.0"
   
   },
   
@@ -38,6 +41,9 @@
   
     
   "@types/node": "^18.16.3",
+  
+    
+  "eth-sig-util": "^3.0.1",
   
     
   "ethers": "5.7.2",
